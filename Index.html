@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Smart Waste Classifier</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Smart Waste Classifier</h1>
+    <div class="controls">
+      <input type="file" id="upload" accept="image/*" />
+      <button id="startWebcam">Start Webcam</button>
+      <button id="stopWebcam" disabled>Stop Webcam</button>
+    </div>
+
+    <div class="preview">
+      <video id="webcam" autoplay playsinline width="320" height="240"></video>
+      <canvas id="canvas" width="320" height="240" style="display:none"></canvas>
+      <img id="inputImage" alt="input preview" />
+    </div>
+
+    <div id="predictions" class="predictions">
+      <p>Model status: <span id="modelStatus">Loading...</span></p>
+      <ul id="predList"></ul>
+    </div>
+
+    <div class="notes">
+      <p>Replace <code>MODEL_URL</code> in <code>app.js</code> with your Teachable Machine model URL (model.json).</p>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.11.0/dist/tf.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
